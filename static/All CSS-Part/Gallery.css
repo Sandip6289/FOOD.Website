@@ -1,0 +1,398 @@
+/* (""Name") starts this............................. */
+
+/* - ......................Sandip Change This........................................ -- */
+:root {
+    --green: #27ae60;
+    --black: #192a56;
+    --light-color: #666;
+    --box-shadow: 0 .5rem 1.5rem rgba(240, 14, 14, 0.1);
+}
+
+* {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 5.5rem;
+    scroll-behavior: smooth;
+}
+
+section {
+    padding: 2rem 9%;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    align-items: center;
+}
+
+/* backgroun of all section part.... */
+section:nth-child(even) {
+    background: #eee;
+}
+
+.btn {
+    margin-top: 1rem;
+    display: inline-block;
+    font-size: 1.7rem;
+    color: #fff;
+    background: var(--black);
+    border-radius: 24px 4px;
+    cursor: pointer;
+    padding: .8rem 3rem;
+}
+
+.btn:hover {
+    background: #e6e221;
+    letter-spacing: .1rem;
+    color: rgb(117, 110, 110);
+}
+
+header{
+    position:fixed; 
+    top:0.1px; left: 0; right: 0;
+    background: #fff ;
+    padding: 0.2rem 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: var(--box-shadow);
+}
+
+header .icons i,
+header .icons a{
+    cursor: pointer;
+    margin-left: .2rem;
+    margin: 0 0.4rem;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    width: 4.5rem;
+    text-align: center;
+    font-size: 1.7rem;
+    color: var(--black);
+    border-radius: 50%;
+    background: #eee;
+}
+
+header .icons i:hover,
+header .icons a:hover{
+    color: #fff;
+    background: var(--green);
+    transform: rotate(360deg);
+}
+
+header .icons button .log{
+    width: 2rem;
+    padding: 1rem 1rem;
+    border-radius: 12px;
+    background-color: rgb(253, 186, 61);
+    font-size: 1.7rem;
+    transition: 0.4 ease-in-out;
+}
+
+header .icons button .log:hover{
+        background-color: #27ae60;
+        color: white;
+        cursor: pointer;
+        border-radius: 12px;
+}
+.logo{
+    color: var(--green);
+    font-size: 2.5rem;
+    font-weight: bolder;
+    line-height: 80px;
+    padding-right: 80px;
+
+}
+nav ul{
+    float: right;
+    margin-right: 20px;
+}
+nav ul li{
+    display: inline-block;
+    margin: 0 5px;
+    line-height: 80px;
+}
+nav ul li a{
+    color: #666;
+    text-transform: capitalize;
+
+    font-size:  1.7rem;
+    border-radius: .5rem;
+    padding: .5rem 1.5rem;
+    /* transition: 0.5 ease-in-out; */
+}
+
+nav ul li a:hover{
+    color: #fff;
+    background: var(--green);
+    transition: 0.5s;
+}
+nav ul li a.active{
+    background-color: rgb(253, 186, 61);
+}
+nav ul li #prof{
+    display: none;
+}
+
+/* ......... */
+.checkbtn{
+    font-size: 1.7rem;
+    color: black;
+    float: right;
+    margin-top: 2.5rem;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    width: 4.5rem;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+    text-align: center;
+    color: var(--black);
+    border-radius: 50%;
+    background: #eee;
+    transition:  0.4 ease-in-out;
+}
+.checkbtn:hover{
+    background-color: var(--green);
+    color: white;
+    transform: rotate(360deg);
+}
+#check{
+    display: none;
+}
+@media (max-width:991px){
+
+    html{
+        font-size: 55%;
+    }
+    header{
+        padding: 1rem 2rem;
+        height: 10vh;
+    }
+    header .logo{
+        margin-top: 10px;
+
+
+    }
+   
+}
+
+
+@media (max-width: 768px){
+.checkbtn{
+    
+    display: block;
+    font-size: 1.2rem;
+    color: black;
+    float: left;
+    margin-top: 3.7rem;
+    height: 3rem;
+    line-height: 3rem;
+    width: 3rem;
+    margin-right: 45px;
+    text-align: center;
+    color: var(--black);
+    border-radius: 50%;
+   
+    }
+header .icons i,
+header .icons a{
+    cursor: pointer;
+    margin-left: 2rem;
+    margin: 0 0.4rem;
+    /* margin-top: 5px; */
+    margin-right: 5px;
+    height: 3rem;
+    line-height: 3rem;
+    width: 3rem;
+    text-align: center;
+    font-size: 1.7rem;
+    color: var(--black);
+    border-radius: 50%;
+    background: #eee;
+}
+
+header .icons button .log{
+    width: 2rem;
+    padding:5px 5px;
+    border-radius: 12px;
+    background-color: rgb(253, 186, 61);
+    font-size: 1.2rem;
+    transition: 0.4 ease-in-out;
+    display: none;
+}
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        text-align: center;
+        transition: all .5s;
+        background: rgba(0, 0, 0, .8);
+        top: 70px;
+        left: -100%;
+        padding: 1.5rem;
+        transition: all .5s;
+    }
+   
+    nav ul li{
+        display: block;
+        margin: 30px 0;
+        line-height: 30px;
+    }
+    nav ul li a{
+        display: block;
+        padding: 6px;
+        margin: 1px;
+        font-size: 2.5rem;
+        color: #fff;
+    }
+    nav ul li #prof{
+        display: block;
+        padding: 6px;
+        margin: 1px;
+        font-size: 2.5rem;
+        color: #fff;
+    }
+    a:hover,a.active{
+        background-color: none;
+    }
+    #check:checked ~ ul{
+        left: 0;
+    }
+    #search-form #search-box{
+        width: 100%;
+        margin: 0 .1rem;
+    }
+}
+@media (max-width:991px){
+
+    html{
+        font-size: 50%;
+    }
+}
+
+/* - ......................Sandip Change This........................................ -- */
+
+/* ................................................................ */
+#search-form {
+    position: fixed;
+    top: -110%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1004;
+    background: rgba(0, 0, 0, .8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+}
+
+#search-form.active {
+    top: 0;
+}
+
+#search-form #search-box {
+    width: 50rem;
+    border-bottom: .1rem solid #fff;
+    padding: 1rem 0;
+    color: #fff;
+    font-size: 3rem;
+    text-transform: none;
+    background: none;
+}
+
+#search-form #search-box::placeholder {
+    color: #eee;
+}
+
+#search-form #search-box::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+}
+
+#search-form label {
+    color: #fff;
+    cursor: pointer;
+    font-size: 3rem;
+}
+
+
+
+#search-form #close {
+    position: absolute;
+    color: #fff;
+    cursor: pointer;
+    top: 2rem;
+    right: 3rem;
+    font-size: 5rem;
+
+}
+
+
+/* ............................................................................................. */
+.title{
+    
+    margin-top: 12rem;
+
+}
+.title p{
+    
+    font-size: 5rem;
+    text-transform: capitalize;
+    text-align: center;
+    font-weight: bold;
+    color: #e6e221;
+}
+
+.matter{
+    width:100%;
+    height:auto;
+    overflow:auto;
+    text-align:center;
+    margin-top:5%;
+    background-color: #F2F2F2;
+}
+
+.matter .col{
+    width: 295px;
+    height: 300px;
+    margin: 40px;
+    display:inline-block;
+    /* border: 3px solid gold; */
+    border-radius: 70% 30% 30% 70% / 60% 40% 60% 40%;
+    background: rgb(84, 220, 206);
+    transition: 0.35s;
+}
+.matter .col:hover{
+    background: linear-gradient(to right, hsl(98 100% 62%), rgb(250, 231, 60));
+}
+.matter .col img{
+    margin-top: 2.5rem;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    border: 2px solid rgb(7, 7, 7);
+    margin-bottom: 10px;
+    margin-left: 1rem;
+}
+.matter .col p{
+    font-size: 2.5rem;
+    color: #fff;
+    text-transform: capitalize;
+    margin-left: 3.5rem;
+    font-weight: bold;
+}
+
+
+/* ("Nmae") ends this............................ */

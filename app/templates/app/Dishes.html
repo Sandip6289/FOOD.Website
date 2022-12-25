@@ -1,0 +1,53 @@
+{% extends "app/base1.html" %}
+{% load static %}
+{% block content %}
+    <!-- Menu section............. --------------------------------------------------->
+
+    <div class="title" id="title">
+        <h1 class="heading2" style="margin-top: 10rem;">Our  <span>today's Dishes</span></h1>
+    </div>
+    
+
+    <section class="product" id="product">
+
+        <div class="box-container">
+
+            {% if food %}
+            {% for k in food %}
+            {% if k.foodtype == "Today's Dishes" %}
+            <div class="box">
+                <span class="discount">{{k.offer}}%</span>
+                <div class="icons">
+                    <a href="#" class="fa fa-heart"></a>
+                    <a href="#" class="fa fa-eye"></a>
+                    <a href="#" class="fa fa-share"></a>
+                </div>
+                <img src="{{MEDIA_URL}}{{k.foodpic.url}}" alt="">
+                <h3>{{k.foodname}}</h3>
+
+                <div class="stars">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div> 
+                
+                <div class="price">₹{{k.offerprice}}
+                    <span style="font-size: 1.5rem;color: #999;text-decoration: line-through;">
+                        ₹{{k.foodprice}}</span>
+                </div>
+                {% if request.session.id %}
+                <center><a href="{% url 'orderpage' pk=k.id %}" class="button2">buy now</a></center>
+                {% else %}
+                <center><a href="{% url 'loginpage' %}" class="button2">buy now</a></center>
+                {% endif %}
+            </div>
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+
+            
+
+
+
+    </section>
+{% endblock %}

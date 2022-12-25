@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static '/All CSS-Part/Login.css' %}">
+    <link rel="stylesheet" href="{% static '/All CSS-Part/Pabitra1Home.css' %}">
+</head>
+<body>
+    
+
+
+    <div class="matter">
+        <!-- ..........................Table 1...................... -->
+        <div class="cicel">
+          <div class="col1">
+  
+            <div class="child2">
+                 <h1>Log In</h1>
+                <form method="post" action="{% url 'login' %}">
+                    {% csrf_token %}
+                    <label>Email</label>
+                    <input type="email" name="logemail" placeholder="email"> 
+
+                    <label>Password</label>
+                    <input type="password" name="logpassword" placeholder="Password"> 
+
+       
+                    <button type="submit" class="button2">Login</button> 
+                </form>
+  
+            </div>
+            <p class="first">Don't have an accoun? <a href="{% url 'signuppage' %}">Sign Up Here</a></p>
+
+        
+  
+          </div>
+  
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static '/All CSS-Part/My order.css' %}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        body{
+    font-family: montserrat;
+    height:90vh;
+    background: url("{% static 'k1 (1).jpg' %}");
+	background-size:cover;
+	background-position:center;
+    /* background: rgb(244, 210, 126); */
+}
+    </style>
+</head>
+<body>
+    
+    <div class="matter1">
+
+        <div class="col1">
+            <div class="name"><span>my orders</span></div>
+            <div class="subname"><p>2 orders placed in -</p></div>
+            <form>
+                <select>
+                    <option value="2021">2022</option>
+                    <option value="2022">2023</option>
+                </select>
+            </form>
+
+            {% for k in order %}
+            <div class="child1">
+                <table>
+                    <tr>
+                        <th>order placed</th>
+                        <th>total</th>
+                        <th>ship to</th>
+                        <th>order no.</th>
+                    </tr>
+                    <tr>
+                        <td>{{k.order_date.date}}</td>
+                        <td>{{k.offerprice}}.00</td>
+                        <td>{{k.orderid.firstname}}</td>
+                        <td># {{k.id}}-{{k.orderid.user_id.id}}</td>
+                    </tr>
+                </table>
+               
+                <div class="content">
+                 <img src="{{MEDIA_URL}}{{k.foodid.foodpic.url}}">
+                 
+                 <p>{{k.foodid.foodname}}</p>
+                
+                </div>
+
+                <div class="btn">
+                <button><a href="{% url 'reviewpage' %}">Write a product review</a></button>
+                </div>
+
+                <hr size="2" color="gray">
+
+                <!-- <div class="last">
+                <a href="#">Archive order</a>
+                </div> -->
+
+            </div>
+            {% endfor %}
+
+      
+
+        
+
+        </div>
+           
+
+        
+
+    </div>
+ </div>
+</body>
+</html>

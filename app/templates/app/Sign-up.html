@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static '/All CSS-Part/Sign-up.css' %}">
+    <link rel="stylesheet" href="{% static '/All CSS-Part/Pabitra1Home.css' %}">
+
+</head>
+<body>
+    
+    <div class="matter">
+       
+          <!-- ..........................Table 2...................... -->
+  
+          <div class="col1">
+  
+              <div class="child1">
+                <h1 style="font-size: 30px;">Sign Up</h1>
+                <h4>It's free and only takes a minute</h4>
+                {% if msg %}
+                <h3>{{msg}}</h3>
+                {% endif %}
+
+                <div class="cicle"></div>
+                <form method="post" action="{% url 'register' %}">
+                    {% csrf_token %}
+                    
+                    <label>First Name</label>
+                    <input type="text" placeholder="First Name" name="firstname">
+
+                    <label>Last Name</label>
+                    <input type="text" placeholder="Last Name" name="lastname">
+
+                    <label>Email</label>
+                    <input type="email" placeholder="Email" name="email"> 
+
+                    <!-- <label>State</label>
+                    <input type="text" placeholder="">
+
+                    <label>City</label>
+                    <input type="text" placeholder="">
+
+                    <label>Address</label>
+                    <input type="text" placeholder=""> -->
+
+                    <label>Mobile No.</label>
+                    <input type="text" placeholder="Phone No." name="contact"> 
+
+                    <label>Gender</label>
+                    <select name="gender" id="gender" style="width: 320px; height: 30px; border-radius: 7px; border: 2px solid gray;">
+                        <option>--Select--</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Other</option>
+                    </select>
+
+                    <label>Password</label>
+                    <input type="password" placeholder="Password" name="password">
+
+                    <label>confirm password</label>
+                    <input type="password" placeholder="Confirm Password" name="cpassword">  
+
+       <br><br><br>
+                    <button type="submit" class="button2" style="width: 150px;">Submit</button> 
+                       
+                </form>
+
+                <p>By clicking the Sign Up button,you agree our<br>
+                <a href="#">Term and Condition</a> and <a href="#">Policy Privacy</a>
+                </p>
+                 
+            </div>
+
+            <p class="last">Already have an account? <a href="{% url 'loginpage' %}">Login here</a></p>
+
+
+
+
+  
+          </div>
+      </div>
+
+        
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,860 @@
+/* .........................................................Starts by Pabitra............................................. */
+:root {
+    --green: #27ae60;
+    --black: #192a56;
+    --light-color: #666;
+    --box-shadow: 0 .5rem 1.5rem rgba(240, 14, 14, 0.1);
+}
+
+* {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 5.5rem;
+    scroll-behavior: smooth;
+}
+
+section {
+    padding: 2rem 9%;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    align-items: center;
+}
+
+/* backgroun of all section part.... */
+section:nth-child(even) {
+    background: #eee;
+}
+
+.btn {
+    margin-top: 1rem;
+    display: inline-block;
+    font-size: 1.7rem;
+    color: #fff;
+    background: var(--black);
+    border-radius: 24px 4px;
+    cursor: pointer;
+    padding: .8rem 3rem;
+}
+
+.btn:hover {
+    background: #e6e221;
+    letter-spacing: .1rem;
+    color: rgb(117, 110, 110);
+}
+
+header{
+    position:fixed; 
+    top:0.1px; left: 0; right: 0;
+    background: #fff ;
+    padding: 0.2rem 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: var(--box-shadow);
+}
+
+header .icons i,
+header .icons a{
+    cursor: pointer;
+    margin-left: .2rem;
+    margin: 0 0.4rem;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    width: 4.5rem;
+    text-align: center;
+    font-size: 1.7rem;
+    color: var(--black);
+    border-radius: 50%;
+    background: #eee;
+}
+
+header .icons i:hover,
+header .icons a:hover{
+    color: #fff;
+    background: var(--green);
+    transform: rotate(360deg);
+}
+
+header .icons button .log{
+    width: 2rem;
+    padding: 1rem 1rem;
+    border-radius: 12px;
+    background-color: rgb(253, 186, 61);
+    font-size: 1.7rem;
+    transition: 0.4 ease-in-out;
+}
+
+header .icons button .log:hover{
+        background-color: #27ae60;
+        color: white;
+        cursor: pointer;
+        border-radius: 12px;
+}
+.logo{
+    color: var(--green);
+    font-size: 2.5rem;
+    font-weight: bolder;
+    line-height: 80px;
+    padding-right: 80px;
+
+}
+nav ul{
+    float: right;
+    margin-right: 20px;
+}
+nav ul li{
+    display: inline-block;
+    margin: 0 5px;
+    line-height: 80px;
+}
+nav ul li a{
+    color: #666;
+    text-transform: capitalize;
+
+    font-size:  1.7rem;
+    border-radius: .5rem;
+    padding: .5rem 1.5rem;
+    /* transition: 0.5 ease-in-out; */
+}
+
+nav ul li a:hover{
+    color: #fff;
+    background: var(--green);
+    transition: 0.5s;
+}
+nav ul li a.active{
+    background-color: rgb(253, 186, 61);
+}
+nav ul li #prof{
+    display: none;
+}
+
+/* ......... */
+.checkbtn{
+    font-size: 1.7rem;
+    color: black;
+    float: right;
+    margin-top: 2.5rem;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    width: 4.5rem;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+    text-align: center;
+    color: var(--black);
+    border-radius: 50%;
+    background: #eee;
+    transition:  0.4 ease-in-out;
+}
+.checkbtn:hover{
+    background-color: var(--green);
+    color: white;
+    transform: rotate(360deg);
+}
+#check{
+    display: none;
+}
+@media (max-width:991px){
+
+    html{
+        font-size: 55%;
+    }
+    header{
+        padding: 1rem 2rem;
+        height: 10vh;
+    }
+    header .logo{
+        margin-top: 10px;
+
+
+    }
+   
+}
+
+
+@media (max-width: 768px){
+.checkbtn{
+    
+    display: block;
+    font-size: 1.2rem;
+    color: black;
+    float: left;
+    margin-top: 3.7rem;
+    height: 3rem;
+    line-height: 3rem;
+    width: 3rem;
+    margin-right: 45px;
+    text-align: center;
+    color: var(--black);
+    border-radius: 50%;
+   
+    }
+header .icons i,
+header .icons a{
+    cursor: pointer;
+    margin-left: 2rem;
+    margin: 0 0.4rem;
+    /* margin-top: 5px; */
+    margin-right: 5px;
+    height: 3rem;
+    line-height: 3rem;
+    width: 3rem;
+    text-align: center;
+    font-size: 1.7rem;
+    color: var(--black);
+    border-radius: 50%;
+    background: #eee;
+}
+
+header .icons button .log{
+    width: 2rem;
+    padding:5px 5px;
+    border-radius: 12px;
+    background-color: rgb(253, 186, 61);
+    font-size: 1.2rem;
+    transition: 0.4 ease-in-out;
+    display: none;
+}
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        text-align: center;
+        transition: all .5s;
+        background: rgba(0, 0, 0, .8);
+        top: 70px;
+        left: -100%;
+        padding: 1.5rem;
+        transition: all .5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 30px 0;
+        line-height: 30px;
+    }
+    nav ul li a{
+        display: block;
+        padding: 6px;
+        margin: 1px;
+        font-size: 2.5rem;
+        color: #fff;
+    }
+    nav ul li #prof{
+        display: block;
+        padding: 6px;
+        margin: 1px;
+        font-size: 2.5rem;
+        color: #fff;
+    }
+    a:hover,a.active{
+        background-color: none;
+    }
+    #check:checked ~ ul{
+        left: 0;
+    }
+    #search-form #search-box{
+        width: 100%;
+        margin: 0 .1rem;
+    }
+}
+@media (max-width:991px){
+
+    html{
+        font-size: 50%;
+    }
+}
+/* search & close button ..............................................................*/
+#search-form{
+    position: fixed;
+    top: -110%; left: 0;
+    height: 100%; 
+    width: 100%;
+    z-index: 1004;
+    background: rgba(0,0,0,.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+}
+#search-form.active{
+    top: 0;
+}
+#search-form #search-box{
+    width: 50rem;
+    border-bottom: .1rem solid #fff;
+    padding: 1rem 0;
+    color: #fff;
+    font-size: 3rem;
+    text-transform: none;
+    background: none;
+}
+
+#search-form #search-box::placeholder{
+    color: #eee;
+}
+#search-form #search-box::-webkit-search-cancel-button{
+    -webkit-appearance: none;
+}
+#search-form label{
+    color: #fff;
+    cursor: pointer;
+    font-size: 3rem;
+}
+/* #search-form label:hover{
+    color: rgb(57, 97, 228);
+    
+} */
+#search-form #close{
+    position: absolute;
+    color: #fff;
+    cursor: pointer;
+    top: 2rem; right: 3rem;
+    font-size: 5rem;
+
+}
+/* Section home ............................................................*/
+.home .home-slider .slide{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding-top: 9rem;
+    
+}
+.home .home-slider .slide .content{
+    flex: 1 1 45rem;
+}
+.home .home-slider .slide .image{
+    flex: 1 1 45rem;
+}
+.home .home-slider .slide .image img{
+    border-radius: 50%;
+    width: 100%;
+    border:.2rem solid rgb(0, 0, 0) ;
+}
+.home .home-slider .slide .content span{
+    color: rgb(54, 139, 236);
+    font-size:  2.3rem;
+}
+.home .home-slider .slide .content h3{
+    color: var(--black);
+    font-size:  5rem;
+}
+.home .home-slider .slide .content p{
+    color: var(--light-color);
+    font-size:  2.2rem;
+    padding: 2rem 0;
+    line-height: 1.5rem;
+}
+/* .swiper-pagination-bullet-active{
+    background: var(--green);
+} */
+
+/* Bannner container................................................ */
+.banner-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+.banner-container .banner{
+    flex: 1 1 40rem;
+    height: 25rem;
+    overflow: hidden;
+    position: relative;
+}
+.banner-container .banner img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+   
+}
+.banner-container .banner .content{
+    position: absolute;
+    top: 50%; left: 4%;
+    transform: translateY(-50%);
+}
+.banner-container .banner .content h3{
+    font-size: 3rem;
+    color: rgb(255, 255, 255);
+}
+.banner-container .banner .content p{
+    font-size: 2rem;
+    color: rgb(255, 255, 255);
+}
+.banner-container .banner:hover img{
+    transform: scale(1.2) rotate(-5deg);
+}
+
+/* Our dishes....... .........................................*/
+.title {
+    margin-top: 2%;
+    margin-left:5% ;
+}
+.heading{
+    text-align: center;
+    color: rgba(0,0,0,.8);
+    text-transform: uppercase;
+    padding: 1rem;
+    font-size: 3.5rem;
+}
+.heading span{
+    color: rgba(84, 230, 17, 0.8);
+    text-transform: uppercase;
+
+}
+.button1{
+    margin-top: 1rem;
+    /* margin-left: 4rem ; */
+    display:block;
+    font-size: 1.7rem;
+    color: #fff;
+    background: var(--green);
+    border-radius:  4px;
+    cursor: pointer;
+    padding: .8rem 3rem;
+    width: 25rem;
+}
+
+.button1:hover{
+    background:#cac847;
+    letter-spacing: .1rem;
+    color: rgb(117, 110, 110);
+}
+.button1 a{
+    color: white;
+}
+.category .box-container{
+    display: flex;
+    gap: 1.5em;
+    flex-wrap: wrap;
+}
+.category .box-container .box{
+    border: .1rem solid rgba(102, 235, 13, 0.3);
+    background: #fff;
+    border-radius: .5rem;
+    text-align: center;
+    padding: 2rem;
+    flex: 1 1 25rem;
+}
+.category .box-container .box img{
+    border-radius: 20%;
+    width: 23rem;
+    margin: 5rem 0;
+    border:.2rem solid rgb(0, 0, 0);
+}
+
+.category .box-container .box h3{
+    font-size: 3.5rem;
+    color: var(--black);
+}
+.category .box-container .box p{
+    font-size: 2rem;
+    color: #666;
+    padding: .5rem 0;
+}
+
+/* pop up from ......... */
+/* #popupfrm{
+	width:350px;
+	height:auto;
+	position:fixed;
+	left:50%;
+	top:50%;
+	transform:translate(-50%,-50%);
+	border:1px solid rgb(82, 81, 81) ;
+	background-color:#eee;
+	overflow:hidden;
+	display:none;
+    font-size: 2rem;
+    border-radius: 8px;
+    
+}
+#popuptitle{
+	width:100%;
+	
+	padding:1rem;
+    text-align: center;
+	background-color:#e7a94d;
+	color:rgb(164, 243, 161);
+} */
+/* .category #popupfrm #popuptitle .button5 {
+    border-radius: 10px;
+} */
+
+/* About us............................................................. */
+
+.heading1{
+    text-align: center;
+    color: rgba(28, 218, 28, 0.8);
+    padding: 1rem;
+    font-size: 3.5rem;
+}
+.heading1 span{
+    color: rgba(6, 17, 1, 0.8);
+    text-transform: uppercase;
+}
+.about .row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: center;
+}
+.about .row .image{
+    flex: 1 1 45rem;
+}
+.about .row .image img{
+    width: 100%;
+    border-radius: 50%;
+    border:.2rem solid rgb(0, 0, 0) ;
+}
+.about .row .content{
+    flex: 1 1 45rem;
+}
+.about .row .content h3{
+    color: var(--black);
+    font-size: 3rem;
+    padding: 5rem 0;
+}
+.about .row .content p{
+    color: var(--light-color);
+    font-size: 1.5rem;
+    padding: 5rem 0;
+    line-height: 2;
+}
+.about .row .content .icon-container{
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 1rem 0;
+    margin-top: .5rem;
+}
+.about .row .content .icon-container .icons{
+    background: #eee;
+    border-radius: .5rem;
+    border: .1rem solid rgba(0,0,0,.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex: 1 1 17rem;
+    padding: 1.5rem 1rem;
+}
+.about .row .content .icon-container .icons2{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+.about .row .content .icon-container .icons i{
+    font-size: 2.5rem;
+    color: var(--green);
+}
+.about .row .content .icon-container .icons span{
+    font-size: 1.5rem;
+    color: var(--black);
+}
+
+/* menu section.................................................................. */
+
+.heading2{
+    text-align: center;
+    color: rgba(28, 218, 28, 0.8);
+    padding: 1rem;
+    font-size: 3.5rem;
+}
+.heading2 span{
+    color: rgba(6, 17, 1, 0.8);
+    text-transform: uppercase;
+}
+.product .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+.product .box-container .box{
+    flex: 1 1 30rem;
+    border: .1rem solid rgba(0, 0, 0, 0.3);
+    background: #fff;
+    border-radius: 25px 4px;
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    flex: 1 1 25rem;
+
+}
+.product .box-container .box img{
+    height: 20rem;
+    width: 250px;
+    border:.2rem solid rgb(0, 0, 0) ;
+    margin-top: 15%;
+    border-radius: 40%;
+}
+.product .box-container .box .discount{
+    position: absolute;
+    top: 1rem; left: 1rem;
+    background: rgba(55, 240, 18, 0.1);
+    color: rgb(10, 10, 10);
+    padding: .7rem 1rem;
+    font-size: 2rem;
+}
+.product .box-container .box .icons{
+    position: absolute;
+    top: .5rem; right: 6rem;
+}
+.product .box-container .box:hover .icons{
+    right: 1rem;
+    transition: 0.5s;
+}
+.product .box-container .box .icons a{
+    cursor: pointer;
+    margin-left: .5rem;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    width: 4.5rem;
+    text-align: center;
+    font-size: 1.7rem;
+    color: var(--black);
+    border-radius: 50%;
+    background: #eee;
+}
+.product .box-container .box .icons a:hover{
+    background:rgb(81, 156, 241) ;
+    color: #fff;
+    transform: rotate(360deg);
+    transition: 0.5s;
+}
+.product .box-container .box h3{
+    color: var(--black);
+    font-size: 2.5rem;
+}
+.product .box-container .box .stars i{
+    padding: 1rem .1rem;
+    font-size: 1.7rem;
+    color: gold;
+}
+.box .stars i{
+    padding: 1rem .1rem;
+    font-size: 1.7rem;
+    color: gold;
+}
+.product .box-container .box .price{
+    font-size: 2rem;
+    color: #333;
+    
+}
+.product .box-container .box .price span{
+    font-size: 1.5rem;
+    color: #999;
+    text-decoration: line-through;
+}
+.button2{
+    margin-top: 1rem;
+    display: inline-block;
+    font-size: 1.7rem;
+    color: #fff;
+    background: var(--black);
+    border-radius: 35px 10em 10%;
+    cursor: pointer;
+    padding: .8rem 3rem;
+}
+
+.button2:hover{
+    background:#cac847;
+    letter-spacing: .1rem;
+    color: rgb(117, 110, 110);
+}
+
+/* OUR Customer rivew.................................................... */
+
+.heading3{
+    text-align: center;
+    color: rgba(6, 17, 1, 0.8);
+    padding: 1rem;
+    font-size: 3.5rem;
+}
+.heading3 span{
+    color: rgba(28, 218, 28, 0.8);
+    text-transform: uppercase;
+}
+.review .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+.review .box-container .box{
+    text-align: center;
+    padding: 2rem;
+    border: 1rem solid rgb(255 255 255);
+    box-shadow: 0 .5rem 1rem rgb(0,0,0, .7);
+    border-radius: .5rem;
+    flex: 1 1 30rem;
+    background: rgb(31 197 120);
+    margin-top: 6rem;
+}
+.review .box-container .box img{
+    height: 12rem;
+    width: 12rem;
+    border-radius: 50%;
+    border: 1rem solid #fff;
+    margin-top: -8rem;
+    object-fit: cover;
+}
+.review .box-container .box p{
+    font-size: 1.5rem;
+    color: rgb(97, 83, 114);
+    padding: 1rem 0;
+}
+.review .box-container .box h3{
+    padding: .5rem 0;
+    font-size: 2.5rem;
+    color: #fff;
+} 
+.review .box-container .box .stars i{
+    padding: .5rem 0;
+    font-size: 2rem;
+    color:gold
+}
+.rating-wrapper label{
+    display: inline-block;
+    width:50px;
+    position: relative;
+    cursor: pointer;
+
+}
+.rating-wrapper label:before{
+    content: "\2605";
+    position: absolute;
+    font-size: 45px;
+    display: inline-block;
+    top: 0;
+    left: 0;
+}
+
+/* order now----------------------------------------------------------------- */
+
+.order .row{
+    padding: 2rem;
+    box-shadow: 0 .5rem 1rem rgb(0,0,0, .1);
+    background: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    border-radius: .5rem;
+}
+.order .row .image{
+    flex: 1 1 30rem;
+}
+.order .row .image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: .5rem;
+    border:.2rem solid rgb(0, 0, 0) ;
+}
+.order .row .form{
+    flex: 1 1 50rem;
+    padding: 1rem;
+}
+.order .row .form .inputbox{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.order .row form textarea{
+    padding: 1rem;
+    margin: 1rem 0;
+    font-size: 1.7rem;
+    color: #333;
+    text-transform: none;
+    border: .1rem solid rgba(0,0,0,.3);
+    border-radius: .5rem;
+    /* width: 49%; */
+}
+.order .row form textarea{
+    width: 100%;
+    resize: none;
+    height: 15rem;
+}
+.order .row form .btn{
+    border-radius: 5px;
+}
+.order .row form .btn a{
+    color: white;
+}
+.order .row form .btn:hover{
+    background: rgb(240, 7, 7);
+    color: #fff;
+}
+
+/* Footer section----------------------------------------------------------- */
+.footer{
+    background:#fff;
+    padding: 1rem 7%;
+}
+.footer .box-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.footer .box-container .box{
+    flex: 1 1 25rem;
+    margin: 2rem;
+}
+.footer .box-container .box h3{
+    font-size: 2.5rem;
+    color: var(--green);
+    padding: 1rem 0;
+    font-weight: normal;
+}
+.footer .box-container .box p{
+    font-size: 1.7rem;
+    color: var(--black);
+    padding: 1rem 0;
+}
+.footer .box-container .box a{
+    font-size: 1.7rem;
+    color: var(--black);
+    padding: 1rem 0;
+    display: block;
+}
+.footer .box-container .box a:hover{
+    color: rgb(0, 4, 255);
+}
+.footer .box-container .box p i{
+    padding-right: .5rem;
+    color: var(--green);
+}
+
+.footer .credit{
+    font-size: 2rem;
+    text-align: center;
+    border-top: .2rem solid grey;
+    padding: 2rem 1rem;
+    font-weight: normal;
+    letter-spacing: .1rem;
+    color: indianred;
+}
+.footer .credit a{
+    color: rgb(89, 250, 14);
+}
+
+
+
+
+
+
+/* ................................Pabitra end this................................................. */

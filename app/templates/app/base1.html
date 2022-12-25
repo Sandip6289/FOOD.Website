@@ -1,0 +1,132 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static '/All CSS-Part/Pabitra1Home.css' %}">
+    
+    
+
+</head>
+<body>
+
+    
+    <!-- FIRST Pabitra start this ------------------------------------------------------------------>
+
+    <header>
+
+        <nav>
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fa fa-bars"></i>
+            </label>
+            <label class="logo">Food.</label>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                {% if request.session.id %}
+                <li><a href="{% url 'myprofilepage' pk=request.session.id %}" id="prof">profile</a></li>
+                {% endif %}
+                <li><a href="{% url 'dishes' %}">Today's Dishes</a></li>
+                <li><a href="{% url 'gallarypage' %}">Gallery</a></li>
+                <li><a href="{% url 'menu' %}">Menu</a></li>
+                <li><a href="{% url 'reviewpage' %}">Review</a></li>
+                <li><a href="{% url 'aboutpage' %}">About</a></li>
+                
+                
+            </ul>
+        </nav>
+
+        <div class="icons">
+            <i class="fa fa-search" id="search-icons"></i>
+            <a href="#" class="fa fa-heart"></a>
+            <!-- <a href="#" class="fa fa-sign-out"></a> -->
+            {% if request.session.id %}
+            <a href="{% url 'cartpage' pk=request.session.id %}" class="fa fa-shopping-cart">
+                <sup style="font-size: 1rem; font-weight: bold; 
+                font-family: 'Courier New', Courier, monospace;">{{request.session.cartqnt}}</sup></a>
+            <button><a href="{% url 'myprofilepage' pk=request.session.id %}" class="log fas">&#xf007; {{request.session.firstname}} {{request.session.lastname}}</a></button>
+            <a href="{% url 'logout' %}" class="fa fa-sign-out"></a>
+            {% else %}
+            <a href="#" class="fa fa-shopping-cart"></a>
+            <button><a href="{% url 'signuppage' %}" class="log">&#xf406; Sign Up</a></button>
+            {% endif %}
+            
+        </div>
+
+      
+    </header>
+
+
+
+    
+
+    <form action="post" id="search-form">
+        <input type="search" placeholder="search......" name="" id="search-box">
+        <label for="search-box" class="fa fa-search"></label>
+        <i class="fa fa-times" id="close"></i>
+    </form>
+
+
+    {% block content %}
+
+
+
+
+    {% endblock %}
+
+    <!-- Footer section................................................................................ -->
+
+    <div class="footer">
+
+        <div class="box-container">
+
+            <div class="box">
+                <h3>Contact info</h3>
+                <p><i class="fa fa-map-marker"></i>Mumbai, india 40005</p>
+                <p><i class="fa fa-envelope"></i>pabitra@gamil.com</p>
+                <p><i class="fa fa-phone"></i>+123-896-457</p>
+                <p><i class="fa fa-youtube"></i>pabitra vlogs</p>
+            </div>
+
+            <div class="box">
+                <h3>branch location</h3>
+                <a href="#">india</a>
+                <a href="#">usa</a>
+                <a href="#">french</a>
+                <a href="#">england</a>
+            </div>
+
+            <div class="box">
+                <h3>Quick links</h3>
+                <a href="#">home</a>
+                <a href="#">about</a>
+                <a href="#">popular</a>
+                <a href="#">gallery</a>
+            </div>
+
+            <div class="box">
+                <h3>follow us</h3>
+                <a href="#" class="fa fa-instagram">  instagram</a>
+                <a href="#" class="fa fa-facebook">  facebook</a>
+                <a href="#" class="fa fa-twitter">  twitter</a>
+                <a href="#" class="fa fa-linkedin">  linkedin</a>
+            </div>
+
+        </div>
+        <h1 class="credit">created by<a href="#">Final project of my friends</a>&copy; all rights reserved. </h1>
+
+    </div>
+
+
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <script src="{% static '/All JavaScript-part/Pabitra1Home.js' %}"></script>
+    <!-- <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script> -->
+
+    <!-- ........................Pabitra ends this................. -->
+</body>
+</html>

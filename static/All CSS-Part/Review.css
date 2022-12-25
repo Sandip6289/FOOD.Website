@@ -1,0 +1,41 @@
+
+
+.rating-wrapper label{
+    display: inline-block;
+    width:30px;
+    position: relative;
+    
+    cursor: pointer;
+}
+.order .row form .inputbox input{
+    width: 5%;
+    display: none;
+}
+.rating-wrapper label:before{
+    content: "\2605";
+    position: absolute;
+    font-size: 30px;
+    color: rgb(218, 218, 218);
+    display: inline-block;
+    top: 0;
+    left: 0;
+}
+.rating-wrapper label:after{
+    content: "\2605";
+    position: absolute;
+    font-size: 30px;
+    color: gold;
+    display: inline-block;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+.rating-wrapper{
+    padding-right: 15rem;
+    direction: rtl;
+}
+.rating-wrapper label:hover:after,
+.rating-wrapper label:hover ~ label:after,
+.rating-wrapper input:checked ~ label:after{
+    opacity: 1;
+}

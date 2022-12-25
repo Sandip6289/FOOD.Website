@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #344a72;
+}
+
+.matter{
+    width:100%;
+    height:auto;
+    overflow:auto;
+    text-align:center;
+    margin-top:20rem;
+    margin-top:5px ;
+}
+.matter .col1{
+    width:400px;
+    height:auto;
+    margin:20px;
+    display:inline-block;
+    border:3px solid rgb(255, 255, 255);
+    font-family:Arial, Helvetica, sans-serif;
+    border-radius: 5px;
+    box-shadow: rgb(151, 144, 150) 6px 6px 20px;
+}
+.matter .col1 .child1{
+    width: 380px;
+    height:auto;
+    margin:8px;
+    border: 2px solid coral;
+    border-radius: 4px;
+    background-color: white
+}
+
+
+.matter .col1 .child1 h1{
+    text-align: center;
+    padding-top: 15px;
+}
+.matter .col1 .child1 h4{
+    text-align: center;
+    padding-top: 15px;
+}
+form{
+    width: 320px;
+    margin-left: 20px;
+}
+form label{
+    display: flex;
+    margin-top: 20px;
+    font-size: 18px;
+}
+form input{
+    width: 100%;
+    padding: 7px;
+    border: none;
+    border: 1px solid gray;
+    border-radius: 6px;
+    outline: none;
+}
+/* input[type="button"]{
+
+    width: 320px;
+    height: 35px;
+    margin: 20px 10px;
+    border: none;
+    background-color: #49c1a2;
+    color: white;
+    font-size: 18px;
+}
+input[type="button"]:hover{
+    border: 2px solid #49c1a2;
+    background-color: bisque;
+    color: black;
+} */
+form button{
+    width: 320px;
+    height: 35px;
+    margin: 20px 10px;
+    border: none;
+    background-color: #49c1a2;
+    color: white;
+    font-size: 18px;
+}
+p{
+    text-align: center;
+    padding: 20px;
+    font-size: 15px;
+}
+.last{
+    text-align: center;
+    color: white;
+    font-size: 15px;
+    margin-top: -10px;
+}
+.last a{
+    color: #49c1a2;
+    
+}
+
+/* .cicle{
+    height: 150px;
+
+} */
+
+
+
+

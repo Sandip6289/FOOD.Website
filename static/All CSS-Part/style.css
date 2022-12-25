@@ -1,0 +1,228 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.matter{
+    width:100%;
+    height:auto;
+    overflow:auto;
+    text-align:center;
+    margin-top:1%;
+}
+.matter .col1{
+    width:450px;
+    height:auto;
+    margin:20px;
+    display:inline-block;
+    border: 1px solid black;
+    box-shadow: 6px 6px 20px #666;
+}
+.matter .col1 .child{
+    border: 2px solid blue;
+    height: auto;
+    width: 430px;
+    margin:8px;
+    border-radius: 5px;
+}
+.matter .col1 .child span{
+    font-size: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+.matter .col1 .child p{
+    font-size: 20px;
+    margin-top: 15px;
+    text-transform: capitalize;
+}
+.matter .col1 .child button{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    width: 180px;
+    text-transform: uppercase;
+    color: blue;
+    border-radius: 10px;
+    padding: 10px 15px;
+    font-weight: bold;
+    transition: 0.5s;
+}
+.matter .col1 .child button:hover{
+    background-color: rgb(102, 102, 225);
+    color: white;
+}
+/* ............................................................ */
+.matter2{
+    width:100%;
+    height:auto;
+    overflow:auto;
+    text-align:center;
+    margin-top:1%;
+}
+.matter2 .col2{
+    width:450px;
+    height:auto;
+    margin:20px;
+    display:inline-block;
+    border: 1px solid black;
+    box-shadow: 6px 6px 20px #666;
+}
+.matter2 .col2 .child2{
+    border: 2px solid blue;
+    height: auto;
+    width: 430px;
+    margin:8px;
+    border-radius: 5px;
+}
+.matter2 .col2 .child2 span{
+    width: 200px;
+    font-size: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 10px;
+    text-decoration: underline;
+    /* background-color: blue; */
+    /* color: white; */
+}
+.matter2 .col2 .child2 img{
+    border-radius: 20%;
+    width: 368px;
+    margin: 40px 0;
+}
+.matter2 .col2 .child2 p{
+    font-size: 20px;
+    margin-top: 1px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    background-color: rgb(233, 183, 118);
+    /* font-weight: bold; */
+}
+.matter2 .col2 .child2 i{
+    font-size: 20px;
+    font-weight: bolder;
+}
+.matter2 .col2 .child2 .price span{
+    font-size: 17px;
+    text-decoration: line-through;
+    margin-left: 15px;
+}
+.matter2 .col2 .child2 .price P{
+    color: green;
+    font-weight: bold;
+    background-color: white;
+    text-transform: lowercase;
+}
+
+
+/* --................................... quantity box --........................................... */
+
+.quantity {
+    display: inline-block; }
+   
+   .quantity .input-text.qty {
+    width: 35px;
+    height: 39px;
+    padding: 0 5px;
+    text-align: center;
+    background-color: transparent;
+    border: 1px solid black;
+   }
+   
+   .quantity.buttons_added {
+    text-align: left;
+    position: relative;
+    white-space: nowrap;
+    vertical-align: top; }
+   
+   .quantity.buttons_added input {
+    display: inline-block;
+    margin: 0;
+    vertical-align: top;
+    box-shadow: none;
+   }
+   
+   .quantity.buttons_added .minus,
+   .quantity.buttons_added .plus {
+    padding: 7px 10px 8px;
+    height: 41px;
+    background-color: #ffffff;
+    border: 1px solid black;
+    cursor:pointer;}
+   
+   .quantity.buttons_added .minus {
+    border-right: 0; }
+   
+   .quantity.buttons_added .plus {
+    border-left: 0; }
+   
+   .quantity.buttons_added .minus:hover,
+   .quantity.buttons_added .plus:hover {
+    background: #eeeeee; }
+   
+   .quantity input::-webkit-outer-spin-button,
+   .quantity input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    margin: 0; }
+    
+    .quantity.buttons_added .minus:focus,
+   .quantity.buttons_added .plus:focus {
+    outline: none; }
+    /* ...................................... */
+
+    .matter2 .col2 .child2 .content p{
+        background-color: rgb(237, 166, 238);
+        margin-top: 25px;
+    }
+    .matter2 .col2 .child2 .content label{
+        font-size: 20px;
+        text-transform: capitalize;
+        margin-top: 15px;
+        margin-right: 160px;
+        font: left;
+    }
+    .matter2 .col2 .child2 .content i{
+        text-transform: uppercase;
+    }
+    .matter2 .col2 .child2 .content #green{
+        color: green;
+    }
+    .matter2 .col2 .child2 .content #font{
+        margin-top: 5px;
+        font-size: 18px;
+        color: green;
+        font-weight: bold;
+        background-color: white;
+    }
+    .matter2 .col2 .child2  #mail{
+        font-size: 20px;
+        /* margin-right: 20px; */
+        font-weight: bold;
+        text-transform: capitalize;
+    }
+    .matter2 .col2 .child2 button{
+        width: 200px;
+        height: 50px;
+        margin-bottom: 20px;
+        background-color: rgb(255, 51, 0);
+        border-radius: 10px;
+        transition: 0.4s;
+    }
+    .matter2 .col2 .child2 button .btn{
+        text-transform: uppercase;
+        font-size: 25px;
+        text-decoration: none;
+        color: greenyellow;
+        font-weight: bold;
+        letter-spacing: 1px;
+        transition: 0.4s;
+    }
+    .matter2 .col2 .child2 button .btn:hover{
+        color: white;
+    }
+    .matter2 .col2 .child2 button:hover{
+        background-color: rgb(25, 0, 255);
+     
+    }

@@ -1,0 +1,235 @@
+{% extends "app/base1.html" %}
+{% load static %}
+{% block content %}
+
+<section>
+</section>
+
+<section style="display: block; padding: 0%;">
+{% if msg %}
+    <center><h1 style="margin-top: 4.5rem; color: white; background-color: tomato; font-size: 2rem;">{{msg}}</h1></center>
+{% endif %}
+</section>
+
+<section class="home" id="home">
+
+    <div class="swiper home-slider">
+        <div class="swiper-wrapper wrapper">
+            <!-- Chicken-roll -->
+            <div class="swiper-slide slide">
+                <div class="content">
+                    <span>fresh and delicious</span>
+                    <h3>veg & nonveg</h3>
+                    <p>your weekend & daily need foods</p>
+                    <a href="{% url 'dishes' %}" class="btn">get started</a>
+                </div>
+                <div class="image">
+                    <img src="{% static '/HomeImage/fried-chicken.jpg' %}" alt="">
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="swiper-pagination"></div> -->
+    </div>
+</section>
+
+<!--Banner section..................---------------------------------------------------------------  -->
+<section class="banner-container">
+    <div class="banner">
+        <img src="{% static '/HomeImage/idli.jpg' %}" alt="">
+        <div class="content">
+            <h3>special offer</h3>
+            <p>upto 10% offer</p>
+            <a href="#" class="btn">check out</a>
+        </div>
+    </div>
+
+    <div class="banner">
+        <img src="{% static '/HomeImage/mix combination.jpg' %}" alt="">
+        <div class="content">
+            <h3>limted offer</h3>
+            <p>upto 20% offer</p>
+            <a href="#" class="btn">check out</a>
+        </div>
+    </div>
+
+</section>
+
+<!-- Our dishes....... ---------------------------------------------------------------------->
+
+<section class="title" id="title">
+    <h1 class="heading">our special <span>Menu</span></h1>
+</section>
+
+<section class="category" id="category">
+    <div class="box-container">
+
+        {% if food %}
+        
+        {% for k in food %}
+        
+        {% if k.foodtype == "Menu" %}
+        <div class="box">
+            <h3>{{k.foodname}}</h3>
+            <p>upto {{k.offer}}% offer</p>
+            <img src="{{MEDIA_URL}}{{k.foodpic.url}}" alt="" style="width: 23rem;margin: 1rem 0; height: 20rem;">
+            
+            <div class="stars" style="padding: 1rem .1rem;font-size: 1.7rem;color: gold;">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+            </div>
+            <div class="price" style="font-size: 2rem; color: #333;">₹{{k.offerprice}}
+                <span style="font-size: 1.5rem;color: #999;text-decoration: line-through;">₹{{k.foodprice}}</span>
+            </div>
+            {% if request.session.id %}
+            <center><a href="{% url 'orderpage' pk=k.id %}" class="button1">Buy Now</a></center>
+            {% else %}
+            <center><a href="{% url 'loginpage' %}" class="button1">Buy Now</a></center>
+            {% endif %}
+            
+        </div>
+        {% endif %}
+        
+        {% endfor %}
+        {% endif %}
+
+    </div>
+
+</section>
+
+<!-- about section -------------------------------------------------------------->
+<section class="title" id="title">
+    <h1 class="heading1">About Us <span>why choose us?</span></h1>
+</section>
+<section class="about" id="about">
+    <div class="row">
+        <div class="image">
+            <img src="{% static '/HomeImage/non-veg-thali-1.jpg'%}" alt="">
+        </div>
+        <div class="content">
+            <h3>best food in the area</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error perferendis neque ab quidem quis, vel animi. Libero aperiam voluptatem temporibus placeat recusandae. Magnam recusandae laudantium sit vitae dignissimos officiis quia repudiandae praesentium nisi maiores, adipisci corporis ducimus error provident repellat eligendi, esse alias doloremque velit autem expedita. Voluptatem, totam eveniet.</p>
+
+            <div class="icon-container">
+                <div class="icons">
+                    <i class="fas fa-shipping-fast"></i>
+                    <span>free delivery</span>
+                </div>
+
+                <div class="icons">
+                    <i class="fa fa-dollar"></i>
+                    <span>easy payments</span>
+                </div>
+
+                <div class="icons">
+                    <i class="fa fa-headphones"></i>
+                    <span>24/7 services</span>
+                </div>
+
+                <div class="icons2">
+                    <a href="{% url 'aboutpage' %}" class="btn">learn more</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Menu section............. --------------------------------------------------->
+
+<section class="title" id="title">
+    <h1 class="heading2">Our Dishes <span>today's special</span></h1>
+</section>
+<section class="product" id="product">
+
+    <div class="box-container">
+
+        {% if food %}
+        {% for k in food %}
+        {% if k.foodtype == "Today's Dishes" %}
+        <div class="box">
+            <span class="discount">{{k.offer}}%</span>
+            <div class="icons">
+                <a href="#" class="fa fa-heart"></a>
+                <a href="#" class="fa fa-eye"></a>
+                <a href="#" class="fa fa-share"></a>
+            </div>
+            <img src="{{MEDIA_URL}}{{k.foodpic.url}}" alt="">
+            <h3>{{k.foodname}}</h3>
+
+            <div class="stars">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+            </div>
+            <div class="price">₹{{k.offerprice}} <span>₹{{k.foodprice}}</span></div>
+            {% if request.session.id %}
+            <a href="{% url 'addtocart' pk=request.session.id fpk=k.id %}" class="button2">add to cart</a>
+            {% else %}
+            <a href="{% url 'loginpage' %}" class="button2">add to cart</a>
+            {% endif %}
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+
+        
+    </div>
+
+</section>
+
+<!-- OUR Customer rivew.............--------------------------------------- -->
+<section class="title" id="title">
+    <h1 class="heading3">Our Customer's <span>review</span></h1>
+</section>
+
+<section class="review" id="review">
+    <div class="box-container">
+
+        <div class="box">
+            <img src="{% static 'ReviewImage/c1.jpg'%}" alt="">
+        <h3>Sanat Dey</h3>
+        <div class="stars">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+        </div>
+        <p>" foods are mind blowing & delicious food .chinise foods are best.I love this "
+        </p>
+        </div>
+
+        <div class="box">
+
+            <img src="{% static '/HomeImage/k (1).jpg'%}" alt="">
+            <h3>Pabitra mondal</h3>
+            <div class="stars">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+            </div>
+            <p>awsome food mind blowing..
+                good food delicious food .mind blowing..I love this &#128525 &#128151 &#128151
+            </p>
+        </div>
+
+        <div class="box">
+            <img src="{% static 'ReviewImage/c5.jpg'%}" alt="">
+        <h3>Sayani Dutta</h3>
+        <div class="stars">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+        </div>
+        <p>"I had breakfast there this morning and dinner tonight.
+             All were well beyond my expectations. Everything is so fresh &#128151 "
+        </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+{% endblock %}

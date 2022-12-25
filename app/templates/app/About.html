@@ -1,0 +1,46 @@
+{% extends "app/base1.html" %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="{% static '/All CSS-Part/about.css' %}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+
+
+	<div class="container">
+		<div class="title">
+			<h1>About <span>Us</span></h1>
+		</div>
+		<div class="content" style="padding-left: 10rem;">
+			<div class="article">
+				<h2>
+					<!-- Why Choose Our Food..? -->
+					
+						What Makes Our Food Special?
+				</h2>
+				<p>
+					Our chefs offer you perfect cooking, best serverd dishes  with fresh ingredients and old recipes.We have only carefully 
+					sourced and sesional ingredients in our disposal to make rustic dishes.We provide you with daily self-made bread,sourdough pizza,
+					roasted fish-meat-vegetables and many More are available our this site.
+					 <br>
+					 <br>		
+					 This Website will be good and suitable for you.We hope this.
+
+				</p>
+				<!-- <a href="" class="button">Read More</a> -->
+			</div>
+				<div class="image-section">
+					<img src="{%static '/AboutusImage/cf1.jpg'%}">
+				</div>
+		</div>
+	</div>
+</body>
+</html>
+
+
+{% endblock %}

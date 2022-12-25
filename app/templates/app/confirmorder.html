@@ -1,0 +1,130 @@
+{% load static %}
+{% load mathfilters %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script data-require="jquery@3.1.1" data-semver="3.1.1"
+        src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="{% static '/All CSS-Part/style.css' %}">
+    <script src="{% static '/All JavaScript-part/script.js' %}"></script>
+</head>
+
+<body>
+
+    <div class="matter">
+        <div class="col1">
+            <div class="child">
+                <span>delivery address</span>
+                <p style="padding: 2px;">{{cust.address}}, {{cust.pincode}}, {{cust.state}}, near {{cust.near}}</p><br>
+                <a href="{% url 'orderpage' food.id %}"><button>change</button></a>
+            </div>
+        </div>
+    </div>
+    <!-- ....................................................................................... -->
+    <form action="{% url 'orderplace' pk=request.session.id fpk=food.id %}" method="post">
+        {% csrf_token %}
+        <div class="matter2">
+            <div class="col2">
+                <div class="child2">
+                    <span>order summary</span>
+                    <img src="{{MEDIA_URL}}{{food.foodpic.url}}" alt="">
+                    <p>{{food.foodname}}</p>
+
+                    <div class="price">
+                        <i>₹ {{food.offerprice}}</i>
+                        <span>{{food.foodprice}}</span>
+                        <p>{{food.offer}}% off 1 offer applied</p>
+
+                    </div>
+
+                    <div class="quantity buttons_added">
+                        <input type="button" id="minus" value="-" onclick="sub(price)" class="minus">
+                        <input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty"
+                            class="input-text qty text" size="4" pattern="" inputmode="">
+                        <input type="button" id="plus" value="+" onclick="add(price)" class="plus">
+                    </div>
+
+
+                    <div class="content">
+                        <p>price datils</p>
+                        <hr width="100%" size="2" color="gray"><br>
+                        <label>price(1 item)</label><i>₹ {{food.offerprice}}</i><br><br>
+                        <label>delivery charge</label><i class="" id="green"> {{delcharge}}</i><br><br>
+                        <hr width="100%" size="2" color="gray"><br>
+
+                        <label>total playable</label><i>₹</i> <i id="price"> {{price}}</i><br>
+                        <label>({{paymentmethod}})</label><br>
+                        <hr width="100%" size="2" color="gray"><br>
+                        <p id="font">your total saving on this order ₹ {{food.foodprice|sub:food.offerprice}}</p>
+
+                        <hr width="100%" size="2" color="gray"><br>
+                    </div>
+                    <label id="mail">order conformation emial will be sent to {{cust.user_id.email}}</label><br></br>
+                    <button class="btn" type="submit" style="font-size: 2rem; color: bisque;">Continue</button>
+
+                </div>
+            </div>
+        </div>
+    </form>
+    <!-- ....................................................................................... -->
+
+    <!-- <div class="quantity buttons_added">
+	<input type="button" value="-" class="minus">
+    <input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
+    <input type="button" value="+" class="plus">
+</div> -->
+{% if payment %}
+<div class="matter">
+    <div class="col1">
+        <div class="child" style="padding: 2rem;">
+    <form action="{% url 'success' pk=request.session.id %}" method="POST">
+        <script src="https://checkout.razorpay.com/v1/checkout.js" 
+            data-key="rzp_test_7PlwfpJ4UJOaZt"  data-amount={{payment.amount}} 
+            data-currency="INR" 
+            data-order_id={{payment.id}}
+            data-buttontext="Pay with Razorpay" data-name="FOOD ."
+            data-description="Pay safely with Razorpay"
+            data-image="https://example.com/your_logo.jpg" 
+            data-prefill.name="Gaurav Kumar"
+            data-prefill.email="gaurav.kumar@example.com" data-theme.color="#F37254">
+        </script>
+        <input type="hidden"
+            custom="Hidden Element" name="hidden">
+    </form>
+</div>
+</div>
+</div>
+{% endif %}
+
+
+</body>
+
+
+
+
+<script>
+    let addVal = parseFloat(price.innerHTML);
+    const add = (price) => {
+        let total = parseFloat(price.innerHTML) + addVal;
+        price.innerHTML = total;
+        return;
+    };
+    const sub = (price) => {
+        let total = parseFloat(price.innerHTML) - addVal;
+        if (total == 0) {
+            price.innerHTML = price.innerHTML;
+        }
+        else {
+            price.innerHTML = total;
+        }
+        return;
+    };
+</script>
+
+</html>

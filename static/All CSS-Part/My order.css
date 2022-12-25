@@ -1,0 +1,265 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    list-style: none;
+}
+body{
+    font-family: montserrat;
+    height:90vh;
+    background: url("k1 (1).jpg");
+	background-size:cover;
+	background-position:center;
+    /* background: rgb(244, 210, 126); */
+}
+
+.matter1{
+    width:100%;
+    height:auto;
+    overflow:auto;
+    text-align:center;
+}
+.matter1 .col1{
+    width: 850px;
+    height:auto;
+    margin:25px;
+    display:inline-block;
+    border: 3px solid #fff;
+    border-radius: 10px;
+}
+.matter1 .col1 .name{
+    margin-top: 15px;
+    background: blue;
+    color: #fff;
+}
+.matter1 .col1 .name span{
+     font-size: 2.7rem;
+    text-transform: capitalize;
+    font-family: monospace;
+    margin-right: 5px;
+}
+.matter1 .col1 .subname{
+    font-size: 2rem;
+    margin-top: 1rem;
+    margin-right: 35rem;
+}
+.matter1 .col1 form{
+    margin-right: 40.5rem;
+    margin-top: 1%;
+}
+.matter1 .col1 form select{
+    height: 2rem;
+    width: 10rem;
+    border-radius: 1rem;
+    font-size: 1.7rem;
+    text-align: center;
+    border: 1px solid salmon;
+    box-shadow: 5px 5px 4px rgb(84, 84, 84);
+}
+.matter1 .col1 .child1{
+    /* width: 415px; */
+    width: 810px;
+    height:auto;
+    margin:8px;
+    margin-top: 15px;
+    margin-left: 13px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    border: 1px solid rgb(19, 243, 11);
+    background-color: #fff;
+    box-shadow: 5px 5px 8px rgb(69, 67, 67);
+}
+.matter1 .col1 .child1 table{
+    margin-left: 2rem;
+    margin-right: 2rem;
+    border-bottom: 3px solid black;
+    border-radius: 0.8rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.matter1 .col1 .child1 table tr th{
+    width: 15rem;
+    height: 2rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+.matter1 .col1 .child1 table tr td{
+    font-size: 20px;
+    text-transform: capitalize;
+}
+.matter1 .col1 .child1 .content img{
+    width: 18rem;
+    height: 12rem;
+    border-radius: 50%;
+    margin-right: 25rem;
+    margin-top: 1%;
+    transition: 0.4 ease-in-out;
+    border: 2px solid greenyellow;
+    box-shadow: 8px 8px 8px rgb(81, 79, 79);
+    transition: 0.4 ease-in-out;
+    margin-bottom: 1rem;
+}
+.matter1 .col1 .child1 .content hr{
+    width: 50%;
+    margin-left: 8rem;
+    border-top: 3px solid rgb(199, 47, 47);
+    border-radius: 50%;
+}
+.matter1 .col1 .child1 .content #down{
+    margin-left: 15rem;
+    margin-bottom: 1rem;
+}
+.matter1 .col1 .child1 .content p{
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: rgb(122, 233, 17);
+    font-weight: bold;
+    background-color: chocolate;
+    padding: 0.1rem 0.1rem;
+    border-radius: 5px;
+}
+.matter1 .col1 .child1 .btn button{
+    width: 18rem;
+    height: 2rem;
+    font-size: 20px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 2rem;
+    margin-right: 25rem;
+    background-color: wheat;
+    border-radius: 8px;
+    box-shadow: 5px 5px 8px gray;
+    transition: 0.4 sec;
+}
+.matter1 .col1 .child1 .btn button:hover{
+    background-color: rgb(230, 108, 246);
+    transition: 0.4 sec;
+}
+.matter1 .col1 .child1 hr{
+    margin-bottom: 1rem;
+}
+.matter1 .col1 .child1 .last{
+    margin-left: 25rem;
+    margin-bottom: 1rem;
+}
+.matter1 .col1 .child1 .last a{
+    font-size: 1.7rem;
+}
+
+
+
+
+/* ........................... */
+@media (max-width:991px){
+    .matter1 .col1{
+        width:450px;
+        height:auto;
+        margin:25px;
+        display:inline-block;
+        border: 3px solid #fff;
+        border-radius: 10px;
+    }
+    .matter1 .col1 .child1{
+        width: 415px;
+        height:auto;
+        margin:8px;
+        margin-top: 15px;
+        margin-left: 13px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        border: 1px solid rgb(19, 243, 11);
+        background-color: #fff;
+    }
+    .matter1 .col1 .subname{
+    margin-right: 5rem;
+    }
+    .matter1 .col1 .subname p{
+    font-size: 1.7rem;
+    color: rgb(54, 234, 18);
+    font-weight: bold;
+    }
+    .matter1 .col1 form{
+        margin-left: 70px;
+        margin-top: 1%;
+    }
+    .matter1 .col1 form select{
+        width: 8rem;
+        height: 1.7rem;
+        font-size: 1rem;
+    }
+    .matter1 .col1 .child1 p{
+        margin-top: 1rem;
+        text-transform: capitalize;
+        margin-right: 15rem;
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+        font-size: 15px;
+    }
+    .matter1 .col1 .child1 a{
+        margin-left: 10rem;
+        margin-top: 4rem;
+        text-transform: uppercase;
+    }
+    .matter1 .col1 .child1 table tr th{
+        font-size: 1rem;
+    }
+    .matter1 .col1 .child1 table tr td{
+        font-size: 15px;
+    }
+    .matter1 .col1 .child1 .content img{
+        width: 15rem;
+        height: 12rem;
+        margin-left: 5rem;
+    }
+    .matter1 .col1 .child1 .content p{
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        color: rgb(122, 233, 17);
+        font-weight: bold;
+       margin-left: 5rem;
+       margin-right: 5rem;
+        
+    }
+    .matter1 .col1 .child1 .btn button a{
+       
+        font-size: 10px;
+        font-weight: bold;
+        padding: 0.1rem 0.1rem;
+        position: relative;
+        right: 5rem;
+    
+       
+    }
+
+}
+@media (max-width:758px){
+    .matter1 .col1 .child1 .btn button{
+        height: 2rem;
+        width: 23rem;
+        position: relative;
+        right: 10px;
+    }
+   
+    .matter1 .col1 .child1 .btn button a{
+       
+        font-size: 12px;
+        font-weight: bold;
+        padding: 0.1rem 0.1rem;
+        position: relative;
+        right: 5rem;
+    
+       
+    }
+    .matter1 .col1 .child1 .last{
+        position: relative;
+        right: 10px;
+    }
+    .matter1 .col1 .child1 .last a{
+        font-size: 5px;
+        /* font-weight: bold;
+        padding: 0.1rem 0.1rem; */
+        position: relative;
+        right: 20rem;
+    }
+}

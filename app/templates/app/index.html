@@ -1,0 +1,80 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static '/All CSS-Part/Welcome.css' %}">
+    <style>
+        body{
+            background: url("{% static 'image.jpeg' %}");
+            background-size:cover;
+	        background-position:center;
+            font-family: montserrat;
+            height:100vh;
+        }
+    </style>
+</head>
+<body>
+
+    
+        <nav>
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fa fa-bars"></i>
+            </label>
+            <label class="logo">food.</label>
+            <ul>
+                <li><a href="{% url 'signuppage' %}">Sign-in</a></li>
+                <li><a href="{% url 'loginpage' %}">Sign-up</a></li>
+                
+            </ul>
+        </nav><br>
+
+        <section style="display: block; padding: 0%;">
+            {% if msg %}
+                <center><h1 style="margin-top: 4.5rem; color: white; font-size: 2rem;">{{msg}}</h1></center>
+            {% endif %}
+        </section>
+        
+
+        <section class="home" id="home">
+
+            <div class="swiper home-slider">
+                <div class="swiper-wrapper wrapper">
+                    <!-- Chicken-roll -->
+                    <div class="swiper-slide slide">
+                        <div class="content">
+                            <span>welcome to our restaurent</span>
+                            <h3>veg & nonveg</h3>
+                            <p>amazing & delicious food</p>
+                            <a href="{% url 'home' %}" class="btn">get started</a>
+                        </div>
+                        <div class="image">
+                            <img src="{% static '/HomeImage/welcome.png' %}" alt="welcome">
+                            <!-- <img src="HomeImage/welcome2.png" alt=""> -->
+                        </div>
+                    </div>
+                </div>
+        
+            </div>
+            </section>
+
+            <!-- <div class="picture">
+                <img src="HomeImage/welcome2.png" alt=""> 
+                <img src="HomeImage/welcome2.png" alt=""> 
+                
+                
+                
+            </div> -->
+           
+   
+
+    
+</body>
+</html>

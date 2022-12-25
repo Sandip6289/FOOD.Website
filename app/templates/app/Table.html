@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static '/All CSS-Part/Table.css' %}">
+    
+</head>
+<body>
+    <div class="ordernow" style="color: white;"><p>Order Now</p></div>
+
+    {% if msg %}
+    <center><h1 style="color: white; background-color: tomato; font-size: 2rem;">{{msg}}</h1></center>
+    {% endif %}
+    
+    <section class="order" id="order" style="background-color: rgb(242, 242, 242);">
+        
+        <div class="row">
+            <div class="image">
+                <img src="{% static 'HomeImage/chicken-roll.jpg' %}" alt="">
+            </div>
+
+            <form method="post" action="{% url 'confirmorderpage' pk=request.session.id fpk=food.id %}">
+                {% csrf_token %}
+
+            <div class="inputbox">
+                <input type="text" name="firstname" placeholder="First Name" value="{{request.session.firstname}}">
+                <input type="text" placeholder="Last Name" name="lastname" value="{{request.session.lastname}}">
+            </div>
+
+            <div class="inputbox">
+                <input type="email" value="{{request.session.email}}" placeholder="Email"
+                 name="email">
+                <input type="text" placeholder="food name" name="foodname" value="{{food.foodname}}">
+            </div>
+
+            <div class="inputbox">
+                <input type="text" value="{{request.session.state}}" required name="state" placeholder="State">
+                <input type="text" placeholder="City" value="{{request.session.city}}" required name="city">
+            </div>
+
+            <div class="inputbox">
+                <!-- <input type="number" value="{{food.foodprice}}" name="foodprice" placeholder="Price" name="price"> -->
+                <input type="text" placeholder="Pin Code" required name="pincode">
+                <input type="text" placeholder="Nearby Landmark" required name="near">
+            </div>
+
+            <div class="inputbox">
+                <input type="text" placeholder="Contact Number" required name="contact">
+                <select name="paymentmethod" id="paymentmethod" required style="border:2px solid gray; height: 35px; width: 232px; border-radius: 5px;">
+                    <option>-Select Payment Method-</option>
+                    <option>Cash on Delivery</option>
+                    <option>Net Banking</option>
+                    <option>UPI</option>
+                </select>
+            </div>
+            
+
+            <textarea placeholder="Address Details" name="address" id="" required cols="30" rows="10"></textarea>
+
+            <button class="btn">Order Now</button>
+            </form>
+
+        </div>
+    </section>
+
+</body>
+</html>

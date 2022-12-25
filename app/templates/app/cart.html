@@ -1,0 +1,47 @@
+{% extends "app/base1.html" %}
+{% load static %}
+{% block content %}
+    <!-- Menu section............. --------------------------------------------------->
+
+    <div class="title" id="title">
+        <h1 class="heading2" style="margin-top: 10rem;">Your  <span>Cart</span></h1>
+    </div>
+    
+
+    <section class="product" id="product">
+
+        <div class="box-container">
+
+            {% if custcart %}
+            {% for k in custcart %}
+            <div class="box">
+                <span class="discount">{{k.food_id.offer}}%</span>
+                <div class="icons">
+                    <a href="#" class="fa fa-heart"></a>
+                    <a href="#" class="fa fa-eye"></a>
+                    <a href="#" class="fa fa-share"></a>
+                </div>
+                <img src="{{MEDIA_URL}}{{k.food_id.foodpic.url}}" alt="">
+                <h3>{{k.food_id.foodname}}</h3>
+
+                <div class="stars">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div> 
+                
+                <div class="price">₹{{k.food_id.offerprice}}
+                    <span style="font-size: 1.5rem;color: #999;text-decoration: line-through;">
+                        ₹{{k.food_id.foodprice}}</span>
+                </div>
+                <center><a href="{% url 'orderpage' pk=k.food_id.id %}" class="button2">buy now</a></center>
+            </div>
+            
+            {% endfor %}
+            {% endif %}
+            
+
+
+
+    </section>
+{% endblock %}

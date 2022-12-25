@@ -1,0 +1,85 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static '/All CSS-Part/My-profile.css' %}">
+</head>
+<style>
+    body{
+        font-family: montserrat;
+        height:90vh;
+        background: url("{% static 'pic 1 .jpg' %}");
+        background-size:cover;
+        background-position:center;
+    }
+</style>
+<body>
+
+<!-- <div class="image">
+    <img src="img 1.jpeg"> -->
+    <div class="matter1">
+
+        <div class="col1">
+            <div class="name"><span>my account</span></div>
+          <div class="picture">
+
+            {% if cust.gender == "Male" %}
+            <img src="{% static '/My profile image/pic 2.jpg' %}"> 
+            {% else %}
+            <img src="{% static '/My profile image/pic 3.png' %}">
+            {% endif %}
+
+            <div class="textbox">
+            <input type="text" value="{{cust.firstname}} {{cust.lastname}}">
+            <p id="no">{{cust.contact}}</p>
+            <p id="no">{{user.email}}</p>
+
+            <div class="child1">
+                <i class="fa"> <p>&#xf07a  my order</p></i>
+                <hr width="90%" size="3" color="black"><br>
+                
+                <a href="{% url 'myorderpage' pk=user.id %}">view all orders</a>
+            </div>
+
+            <div class="child1">
+                <i class="fa"> <p>&#xf030  my reviews</p></i>
+                <hr width="90%" size="3" color="black"><br>
+                <a href="{% url 'reviewpage' %}">view yours reviews</a>
+
+            </div>
+
+            <div class="child1">
+
+                <i class="fa"> <p>&#xf2b9  my address</p></i>
+                <p id="addbook">{{cust.address}}, {{cust.pincode}}...</p>
+                <hr width="90%" size="3" color="black"><br>
+                {% if cust.address %}
+                <a href="#">view more</a>
+                {%else%}
+                <a href="#">edit</a>
+                {%endif%}
+            </div>
+
+            <div class="child1">
+                <br>
+                <i class="fa"><a href="{% url 'logout' %}">&#xf08b log-out</a></i>
+                
+            </div>
+
+          </div>
+
+          </div>  
+
+        </div>
+
+    </div>
+ </div>
+
+</body>
+</html>
